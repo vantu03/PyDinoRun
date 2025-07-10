@@ -4,20 +4,33 @@ import pygame
 class Dino(GameObject):
     def __init__(self):
         animations = {
-            "run": [pygame.image.load("Assets/Dino/DinoRun1.png"), pygame.image.load("Assets/Dino/DinoRun2.png")],
-            "jump": [pygame.image.load("Assets/Dino/DinoJump.png")],
-            "duck": [pygame.image.load("Assets/Dino/DinoDuck1.png"), pygame.image.load("Assets/Dino/DinoDuck2.png")],
-            "dead": [pygame.image.load("Assets/Dino/DinoDead.png")],
+            "stand": [
+                GameObject.sprite_sheet.subsurface(pygame.Rect(848, 2, 44, 47)),
+                GameObject.sprite_sheet.subsurface(pygame.Rect(892, 2, 44, 47)),
+            ],
+            "run": [
+                GameObject.sprite_sheet.subsurface(pygame.Rect(936, 2, 44, 47)),
+                GameObject.sprite_sheet.subsurface(pygame.Rect(980, 2, 44, 47)),
+            ],
+            "jump": [
+                GameObject.sprite_sheet.subsurface(pygame.Rect(1024, 2, 44, 47)),
+            ],
+            "duck": [
+                GameObject.sprite_sheet.subsurface(pygame.Rect(1112, 2, 59, 47)),
+                GameObject.sprite_sheet.subsurface(pygame.Rect(1171, 2, 59, 47)),
+            ],
+            "dead": [
+                GameObject.sprite_sheet.subsurface(pygame.Rect(980, 0, 44, 47)),
+            ],
         }
 
-        super().__init__(x=80, y=310, animations=animations, state="run")
+        super().__init__(x=80, y=280, animations=animations, state="run", layer=3)
 
-        # Thuộc tính nhảy
         self.velocity_y = 0
         self.gravity = 1
         self.jump_force = -20
         self.is_jumping = False
-        self.ground_y = self.y  # mốc sàn để biết khi nào chạm đất
+        self.ground_y = self.y
 
     def update(self):
         # Nếu đang nhảy thì áp dụng vật lý

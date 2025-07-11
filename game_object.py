@@ -1,4 +1,5 @@
 import pygame
+import os, sys
 
 global_objects = []
 

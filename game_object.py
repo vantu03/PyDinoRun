@@ -19,7 +19,6 @@ class GameObject:
 
         self.animation_speed = 0.2
         self.frame_timer = 0
-        self.scored = False
         self.layer = layer
         self.scale_frames()
 

@@ -5,7 +5,7 @@ from game_object import GameObject
 class CactusLarge(GameObject):
     def __init__(self):
         animations = {"idle": [
-            GameObject.sprite_sheet.subsurface(pygame.Rect(332, 2, 25 * random.randint(1, 3), 50)),
+            GameObject.sprite_sheet.subsurface(pygame.Rect(332, 2, 25 * random.randint(1, 4), 50)),
         ]}
 
         x = 1200

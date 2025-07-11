@@ -11,7 +11,7 @@ class Bird(GameObject):
         animations = {"fly": bird_images}
 
         x = 1200
-        y = random.choice([180, 260])
+        y = random.choice([180, 230])
         super().__init__(x, y, animations, "fly", layer=2)
 
         self.speed = 10

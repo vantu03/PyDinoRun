@@ -4,7 +4,7 @@ from game_object import GameObject
 class Ground(GameObject):
     def __init__(self):
         animations = {"idle": [
-            GameObject.sprite_sheet.subsurface(pygame.Rect(2, 54, 1200, 15)),
+            GameObject.sprite_sheet.subsurface(pygame.Rect(2, 52, 1200, 16)),
         ]}
         super().__init__(x=0, y=280, animations=animations, state="idle", layer=0)
 

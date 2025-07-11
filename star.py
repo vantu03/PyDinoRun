@@ -2,15 +2,17 @@ import pygame
 import random
 from game_object import GameObject
 
-class Cloud(GameObject):
+class Star(GameObject):
     def __init__(self):
         animations = {"idle": [
-            GameObject.sprite_sheet.subsurface(pygame.Rect(86, 2, 46, 14)),
+            GameObject.sprite_sheet.subsurface(pygame.Rect(644, 2, 10, 9)),
+            GameObject.sprite_sheet.subsurface(pygame.Rect(644, 11, 10, 9)),
+            GameObject.sprite_sheet.subsurface(pygame.Rect(644, 20, 10, 9)),
         ]}
-        x = random.randint(1100, 1600)
+        x = 300
         y = random.randint(50, 150)
         super().__init__(x, y, animations, "idle", layer=1)
-        self.speed = 3
+        self.speed = 2
 
     def update(self):
         self.x -= self.speed
